@@ -1,0 +1,1 @@
+This repository contains my solutions of different puzzles found in the internet. 
