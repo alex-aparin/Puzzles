@@ -6,10 +6,8 @@
 using namespace std;
 typedef long long num_type;
 
-num_type decompose(const num_type N)
+num_type min_surface(const num_type N)
 {
-    cerr << "N: " << N << endl;
-    //  TODO: (alex) optimize algorithm
     num_type min_surf = N * 6;
     for (num_type i = N; 1 <= i; --i)
     {
@@ -32,6 +30,6 @@ int main()
     num_type N;
     cin >> N; cin.ignore();
     const num_type max_surf = 4 * N + 2;
-    const num_type min_surf = decompose(N);
+    const num_type min_surf = min_surface(N);
     cout << min_surf << " " << max_surf << endl;
 }
