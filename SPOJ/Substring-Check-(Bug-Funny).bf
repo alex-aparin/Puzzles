@@ -7,3 +7,17 @@
    InnerCycle Out data : 1 | DiffCounts 0 | LhsOp 0 | RhsOp 0 | Temp
    InnerCycle In data : Counter 5 | str (16 symbs)| pattern (5 symbs)
 ]
+
+; Header initialization
++            ; OutCounter
+>            ; Jmp to \n
++++++++++    ; Code of new line
+>            ; Jmp to \r
+++++++++++++ ; Code of carret return
+>            ; Jmp to Answer
+>            ; Jmp to RawAnswer
+<<<<         ; Jmp to OutCounter
+; Program running
+[
+
+]
