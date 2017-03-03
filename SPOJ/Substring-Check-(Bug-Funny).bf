@@ -11,9 +11,9 @@
 ; Header initialization
 +            ; OutCounter
 >            ; Jmp to \n
-+++++++++    ; Code of new line
++++++++++    ; Code of new line
 >            ; Jmp to \r
-++++++++++++ ; Code of carret return
++++++++++++++ ; Code of carret return
 >            ; Jmp to Answer
 >            ; Jmp to RawAnswer
 <<<<         ; Jmp to OutCounter
