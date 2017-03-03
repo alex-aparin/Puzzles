@@ -58,6 +58,7 @@
    [
        -             ; Decrease counter
 ;====================================================================
+;      COMPARISON OF (0) LETTER
        ; Mov str(0) to left operand
        >             ; Jmp to str(0)
        [
@@ -113,46 +114,102 @@
        <<<<<<<<<                      ; Jmp to str
        <                              ; Jmp to Counter
 ;====================================================================
-;====================================================================
-       ; Mov str(0) to left operand
-       >             ; Jmp to str(0)
+;      COMPARISON OF (1) LETTER
+       ; Mov str(1) to left operand
+       >>             ; Jmp to str(1)
        [
           -          ; Decrease value
-          <<<<       ; Jmp to LeftOp
+          <<<<<       ; Jmp to LeftOp
           +          ; Increase LeftOp
           >>         ; Jmp to Temp
           +          ; Increase Temp
           <<         ; Jmp to LeftOp
-          >>>>       ; Jmp to str
+          >>>>>       ; Jmp to str
        ]
-       <                              ; Jmp to counter
-       ; Mov temp to str(0)
+       <<                              ; Jmp to counter
+       ; Mov temp to str(1)
        <                              ; Jmp to Temp
        [
           -                           ; Decrease Temp
-          >>                          ; Jmp to str(0)
-          +                           ; Increase str(0)
-          <<                          ; Jmp to Temp
+          >>>                          ; Jmp to str(1)
+          +                           ; Increase str(1)
+          <<<                          ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
-       ; Mov pattern(0) to right operand and temp
-       >>>>>>>>>>>>               ; Jmp to pattern(0)
+       ; Mov pattern(1) to right operand and temp
+       >>>>>>>>>>>>>               ; Jmp to pattern(1)
        [
           -                           ; Decrease value
-          <<<<<<<<<<<<                ; Jmp to RightOp
+          <<<<<<<<<<<<<                ; Jmp to RightOp
           +                           ; Increase RightOp
           >                           ; Jmp to Temp
           +                           ; Increase Temp
           <                           ; Jmp to RightOp
-          >>>>>>>>>>>>                ; Jmp to pattern(0)
+          >>>>>>>>>>>>>                ; Jmp to pattern(1)
        ]
-       <<<<<<<<<<<<                   ; Jmp to counter
+       <<<<<<<<<<<<<                   ; Jmp to counter
        ; Mov temp to pattern(0)
        <                              ; Jmp to Temp
        [
             -                         ; Decrease value
             >                         ; Jmp to counter
-            >>>>>>>>>>                ; Jmp to pattern(0)
+            >>>>>>>>>>>                ; Jmp to pattern(1)
+            +                         ; Increase value
+            <<<<<<<<<<<                ; Jmp to counter
+            <                         ; Jmp to Temp
+       ]
+       >                              ; Jmp to Counter
+       <<<                            ; Jmp to LeftOp
+       ;    Perform eq test and add res to HitCounter
+       [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
+       >>>                            ; Jmp to Counter
+       ; Shift string to left by one sym
+       >                              ; Jmp to str
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       <<<<<<<<<                      ; Jmp to str
+       <                              ; Jmp to Counter
+;====================================================================
+;      COMPARISON OF (2) LETTER
+       ; Mov str(2) to left operand
+       >>>             ; Jmp to str(2)
+       [
+          -          ; Decrease value
+          <<<<<<       ; Jmp to LeftOp
+          +          ; Increase LeftOp
+          >>         ; Jmp to Temp
+          +          ; Increase Temp
+          <<         ; Jmp to LeftOp
+          >>>>>>       ; Jmp to str
+       ]
+       <                              ; Jmp to counter
+       ; Mov temp to str(2)
+       <                              ; Jmp to Temp
+       [
+          -                           ; Decrease Temp
+          >>>>                          ; Jmp to str(2)
+          +                           ; Increase str(2)
+          <<<<                          ; Jmp to Temp
+       ]
+       >                              ; Jmp to Counter
+       ; Mov pattern(2) to right operand and temp
+       >>>>>>>>>>>>>>               ; Jmp to pattern(2)
+       [
+          -                           ; Decrease value
+          <<<<<<<<<<<<<<                ; Jmp to RightOp
+          +                           ; Increase RightOp
+          >                           ; Jmp to Temp
+          +                           ; Increase Temp
+          <                           ; Jmp to RightOp
+          >>>>>>>>>>>>>>                ; Jmp to pattern(2)
+       ]
+       <<<<<<<<<<<<<<                   ; Jmp to counter
+       ; Mov temp to pattern(2)
+       <                              ; Jmp to Temp
+       [
+            -                         ; Decrease value
+            >                         ; Jmp to counter
+            >>>>>>>>>>                ; Jmp to pattern(2)
             +                         ; Increase value
             <<<<<<<<<<                ; Jmp to counter
             <                         ; Jmp to Temp
@@ -169,48 +226,48 @@
        <<<<<<<<<                      ; Jmp to str
        <                              ; Jmp to Counter
 ;====================================================================
-;====================================================================
-       ; Mov str(0) to left operand
-       >             ; Jmp to str(0)
+;      COMPARISON OF (3) LETTER
+       ; Mov str(3) to left operand
+       >>>>             ; Jmp to str(3)
        [
           -          ; Decrease value
-          <<<<       ; Jmp to LeftOp
+          <<<<<<<       ; Jmp to LeftOp
           +          ; Increase LeftOp
           >>         ; Jmp to Temp
           +          ; Increase Temp
           <<         ; Jmp to LeftOp
-          >>>>       ; Jmp to str
+          >>>>>>>       ; Jmp to str
        ]
        <                              ; Jmp to counter
-       ; Mov temp to str(0)
+       ; Mov temp to str(3)
        <                              ; Jmp to Temp
        [
           -                           ; Decrease Temp
-          >>                          ; Jmp to str(0)
-          +                           ; Increase str(0)
-          <<                          ; Jmp to Temp
+          >>>>>                          ; Jmp to str(3)
+          +                           ; Increase str(3)
+          <<<<<                          ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
-       ; Mov pattern(0) to right operand and temp
-       >>>>>>>>>>>>               ; Jmp to pattern(0)
+       ; Mov pattern(3) to right operand and temp
+       >>>>>>>>>>>>>>>               ; Jmp to pattern(3)
        [
           -                           ; Decrease value
-          <<<<<<<<<<<<                ; Jmp to RightOp
+          <<<<<<<<<<<<<<<                ; Jmp to RightOp
           +                           ; Increase RightOp
           >                           ; Jmp to Temp
           +                           ; Increase Temp
           <                           ; Jmp to RightOp
-          >>>>>>>>>>>>                ; Jmp to pattern(0)
+          >>>>>>>>>>>>>>>                ; Jmp to pattern(3)
        ]
-       <<<<<<<<<<<<                   ; Jmp to counter
-       ; Mov temp to pattern(0)
+       <<<<<<<<<<<<<<<                   ; Jmp to counter
+       ; Mov temp to pattern(3)
        <                              ; Jmp to Temp
        [
             -                         ; Decrease value
             >                         ; Jmp to counter
-            >>>>>>>>>>                ; Jmp to pattern(0)
+            >>>>>>>>>>>>>                ; Jmp to pattern(3)
             +                         ; Increase value
-            <<<<<<<<<<                ; Jmp to counter
+            <<<<<<<<<<<<<                ; Jmp to counter
             <                         ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
@@ -225,104 +282,48 @@
        <<<<<<<<<                      ; Jmp to str
        <                              ; Jmp to Counter
 ;====================================================================
-;====================================================================
-       ; Mov str(0) to left operand
-       >             ; Jmp to str(0)
+;      COMPARISON OF (4) LETTER
+       ; Mov str(4) to left operand
+       >>>>>             ; Jmp to str(4)
        [
           -          ; Decrease value
-          <<<<       ; Jmp to LeftOp
+          <<<<<<<<       ; Jmp to LeftOp
           +          ; Increase LeftOp
           >>         ; Jmp to Temp
           +          ; Increase Temp
           <<         ; Jmp to LeftOp
-          >>>>       ; Jmp to str
+          >>>>>>>>       ; Jmp to str
        ]
        <                              ; Jmp to counter
-       ; Mov temp to str(0)
+       ; Mov temp to str(4)
        <                              ; Jmp to Temp
        [
           -                           ; Decrease Temp
-          >>                          ; Jmp to str(0)
-          +                           ; Increase str(0)
-          <<                          ; Jmp to Temp
+          >>>>>>                          ; Jmp to str(4)
+          +                           ; Increase str(4)
+          <<<<<<                          ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
-       ; Mov pattern(0) to right operand and temp
-       >>>>>>>>>>>>               ; Jmp to pattern(0)
+       ; Mov pattern(4) to right operand and temp
+       >>>>>>>>>>>>>>>>               ; Jmp to pattern(4)
        [
           -                           ; Decrease value
-          <<<<<<<<<<<<                ; Jmp to RightOp
+          <<<<<<<<<<<<<<<<                ; Jmp to RightOp
           +                           ; Increase RightOp
           >                           ; Jmp to Temp
           +                           ; Increase Temp
           <                           ; Jmp to RightOp
-          >>>>>>>>>>>>                ; Jmp to pattern(0)
+          >>>>>>>>>>>>>>>>                ; Jmp to pattern(4)
        ]
-       <<<<<<<<<<<<                   ; Jmp to counter
-       ; Mov temp to pattern(0)
+       <<<<<<<<<<<<<<<<                   ; Jmp to counter
+       ; Mov temp to pattern(4)
        <                              ; Jmp to Temp
        [
             -                         ; Decrease value
             >                         ; Jmp to counter
-            >>>>>>>>>>                ; Jmp to pattern(0)
+            >>>>>>>>>>>>>>                ; Jmp to pattern(4)
             +                         ; Increase value
-            <<<<<<<<<<                ; Jmp to counter
-            <                         ; Jmp to Temp
-       ]
-       >                              ; Jmp to Counter
-       <<<                            ; Jmp to LeftOp
-       ;    Perform eq test and add res to HitCounter
-       [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
-       >>>                            ; Jmp to Counter
-       ; Shift string to left by one sym
-       >                              ; Jmp to str
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       <<<<<<<<<                      ; Jmp to str
-       <                              ; Jmp to Counter
-;====================================================================
-;====================================================================
-       ; Mov str(0) to left operand
-       >             ; Jmp to str(0)
-       [
-          -          ; Decrease value
-          <<<<       ; Jmp to LeftOp
-          +          ; Increase LeftOp
-          >>         ; Jmp to Temp
-          +          ; Increase Temp
-          <<         ; Jmp to LeftOp
-          >>>>       ; Jmp to str
-       ]
-       <                              ; Jmp to counter
-       ; Mov temp to str(0)
-       <                              ; Jmp to Temp
-       [
-          -                           ; Decrease Temp
-          >>                          ; Jmp to str(0)
-          +                           ; Increase str(0)
-          <<                          ; Jmp to Temp
-       ]
-       >                              ; Jmp to Counter
-       ; Mov pattern(0) to right operand and temp
-       >>>>>>>>>>>>               ; Jmp to pattern(0)
-       [
-          -                           ; Decrease value
-          <<<<<<<<<<<<                ; Jmp to RightOp
-          +                           ; Increase RightOp
-          >                           ; Jmp to Temp
-          +                           ; Increase Temp
-          <                           ; Jmp to RightOp
-          >>>>>>>>>>>>                ; Jmp to pattern(0)
-       ]
-       <<<<<<<<<<<<                   ; Jmp to counter
-       ; Mov temp to pattern(0)
-       <                              ; Jmp to Temp
-       [
-            -                         ; Decrease value
-            >                         ; Jmp to counter
-            >>>>>>>>>>                ; Jmp to pattern(0)
-            +                         ; Increase value
-            <<<<<<<<<<                ; Jmp to counter
+            <<<<<<<<<<<<<<                ; Jmp to counter
             <                         ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
