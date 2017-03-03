@@ -63,9 +63,22 @@
           -          ; Decrease value
           <<<<       ; Jmp to LeftOp
           +          ; Increase LeftOp
+          >>         ; Jmp to Temp
+          +          ; Increase Temp
+          <<         ; Jmp to LeftOp
           >>>>       ; Jmp to str
        ]
        <                              ; Jmp to counter
+       ; Mov temp to str(0)
+       <                              ; Jmp to Temp
+       [
+          -                           ; Decrease Temp
+          >>                          ; Jmp to str(0)
+          +                           ; Increase str(0)
+          <<                          ; Jmp to Temp
+       ]
+       >                              ; Jmp to Counter
+;====================================================================
        ; Mov pattern(0) to right operand and temp
        >>>>>>>>>>>>               ; Jmp to pattern(0)
        [
@@ -77,7 +90,7 @@
           <                           ; Jmp to RightOp
           >>>>>>>>>>>>                ; Jmp to pattern(0)
        ]
-       <<<<<<<<<<<<                    ; Jmp to counter
+       <<<<<<<<<<<<                   ; Jmp to counter
        ; Mov temp to pattern(0)
        <                              ; Jmp to Temp
        [
@@ -99,5 +112,146 @@
        >[-<+>]>[-<+>]>[-<+>]>[-<+>]
        <<<<<<<<<                      ; Jmp to str
        <                              ; Jmp to Counter
+;====================================================================
+;====================================================================
+       ; Mov pattern(0) to right operand and temp
+       >>>>>>>>>>>>               ; Jmp to pattern(0)
+       [
+          -                           ; Decrease value
+          <<<<<<<<<<<<                ; Jmp to RightOp
+          +                           ; Increase RightOp
+          >                           ; Jmp to Temp
+          +                           ; Increase Temp
+          <                           ; Jmp to RightOp
+          >>>>>>>>>>>>                ; Jmp to pattern(0)
+       ]
+       <<<<<<<<<<<<                   ; Jmp to counter
+       ; Mov temp to pattern(0)
+       <                              ; Jmp to Temp
+       [
+            -                         ; Decrease value
+            >                         ; Jmp to counter
+            >>>>>>>>>>                ; Jmp to pattern(0)
+            +                         ; Increase value
+            <<<<<<<<<<                ; Jmp to counter
+            <                         ; Jmp to Temp
+       ]
+       >                              ; Jmp to Counter
+       <<<                            ; Jmp to LeftOp
+       ;    Perform eq test and add res to HitCounter
+       [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
+       >>>                            ; Jmp to Counter
+       ; Shift string to left by one sym
+       >                              ; Jmp to str
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       <<<<<<<<<                      ; Jmp to str
+       <                              ; Jmp to Counter
+;====================================================================
+;====================================================================
+       ; Mov pattern(0) to right operand and temp
+       >>>>>>>>>>>>               ; Jmp to pattern(0)
+       [
+          -                           ; Decrease value
+          <<<<<<<<<<<<                ; Jmp to RightOp
+          +                           ; Increase RightOp
+          >                           ; Jmp to Temp
+          +                           ; Increase Temp
+          <                           ; Jmp to RightOp
+          >>>>>>>>>>>>                ; Jmp to pattern(0)
+       ]
+       <<<<<<<<<<<<                   ; Jmp to counter
+       ; Mov temp to pattern(0)
+       <                              ; Jmp to Temp
+       [
+            -                         ; Decrease value
+            >                         ; Jmp to counter
+            >>>>>>>>>>                ; Jmp to pattern(0)
+            +                         ; Increase value
+            <<<<<<<<<<                ; Jmp to counter
+            <                         ; Jmp to Temp
+       ]
+       >                              ; Jmp to Counter
+       <<<                            ; Jmp to LeftOp
+       ;    Perform eq test and add res to HitCounter
+       [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
+       >>>                            ; Jmp to Counter
+       ; Shift string to left by one sym
+       >                              ; Jmp to str
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       <<<<<<<<<                      ; Jmp to str
+       <                              ; Jmp to Counter
+;====================================================================
+;====================================================================
+       ; Mov pattern(0) to right operand and temp
+       >>>>>>>>>>>>               ; Jmp to pattern(0)
+       [
+          -                           ; Decrease value
+          <<<<<<<<<<<<                ; Jmp to RightOp
+          +                           ; Increase RightOp
+          >                           ; Jmp to Temp
+          +                           ; Increase Temp
+          <                           ; Jmp to RightOp
+          >>>>>>>>>>>>                ; Jmp to pattern(0)
+       ]
+       <<<<<<<<<<<<                   ; Jmp to counter
+       ; Mov temp to pattern(0)
+       <                              ; Jmp to Temp
+       [
+            -                         ; Decrease value
+            >                         ; Jmp to counter
+            >>>>>>>>>>                ; Jmp to pattern(0)
+            +                         ; Increase value
+            <<<<<<<<<<                ; Jmp to counter
+            <                         ; Jmp to Temp
+       ]
+       >                              ; Jmp to Counter
+       <<<                            ; Jmp to LeftOp
+       ;    Perform eq test and add res to HitCounter
+       [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
+       >>>                            ; Jmp to Counter
+       ; Shift string to left by one sym
+       >                              ; Jmp to str
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       <<<<<<<<<                      ; Jmp to str
+       <                              ; Jmp to Counter
+;====================================================================
+;====================================================================
+       ; Mov pattern(0) to right operand and temp
+       >>>>>>>>>>>>               ; Jmp to pattern(0)
+       [
+          -                           ; Decrease value
+          <<<<<<<<<<<<                ; Jmp to RightOp
+          +                           ; Increase RightOp
+          >                           ; Jmp to Temp
+          +                           ; Increase Temp
+          <                           ; Jmp to RightOp
+          >>>>>>>>>>>>                ; Jmp to pattern(0)
+       ]
+       <<<<<<<<<<<<                   ; Jmp to counter
+       ; Mov temp to pattern(0)
+       <                              ; Jmp to Temp
+       [
+            -                         ; Decrease value
+            >                         ; Jmp to counter
+            >>>>>>>>>>                ; Jmp to pattern(0)
+            +                         ; Increase value
+            <<<<<<<<<<                ; Jmp to counter
+            <                         ; Jmp to Temp
+       ]
+       >                              ; Jmp to Counter
+       <<<                            ; Jmp to LeftOp
+       ;    Perform eq test and add res to HitCounter
+       [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
+       >>>                            ; Jmp to Counter
+       ; Shift string to left by one sym
+       >                              ; Jmp to str
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       <<<<<<<<<                      ; Jmp to str
+       <                              ; Jmp to Counter
+;====================================================================
    ]
 ]
