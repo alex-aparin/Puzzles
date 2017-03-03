@@ -31,7 +31,17 @@
     [-]      ; Mov RhsOp 0
     >        ; Jmp Temp
     [-]      ; Mov Temp 0
-    >        ; Jmp to InnerCycle In data
+    >        ; Jmp to Counter
     ; Init InnerCycle In data
-    
+    +++++    ; Mov Counter 5
+    >        ; Jmp to str
+    ,>,>,>,>,>,>,>,>,>,>,>,>,>,>,>, ; Read str (16 length)
+    >                ; Jmp to pattern
+    ,[-]             ; Read and clear delimiter
+    ,>,>,>,>,        ; Read pattern (5 length)
+    <<<<<<<<<<<<<<<< ; Jmp to Counter
+   ; Counting substring "including"
+   [
+       -             ; Decrease counter
+   ]
 ]
