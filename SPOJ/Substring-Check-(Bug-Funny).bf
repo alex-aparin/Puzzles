@@ -1,15 +1,9 @@
-; Input:  |0 0  0 _        asfas
-; Output: 0  |1 1 _
->+>+<
-; Input:   _ 0       |a b _
-; Output:  _ |(a==b) 0  0 _
-[>[-<->]<<]
-[-<+>]>[-<<+>>]<<
-; Input:  |a1 a2 _ _  a16 _
-; Output: |a2 a3 _ a16 0  _
-[-]>
-[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]>
-[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]>
-[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-<<<<<
-<<<<<\<<<<<<
+[
+   Current program checks whether pattern (5 length) is substring for
+   given string (16 length). Check is performed on given 24 statements
+
+   Program memory organization:
+   Header : OutCounter 24 | \n 10 | \r 13 | Answer 0 | RawAnswer 0
+   InnerCycle Out data : 1 | DiffCounts 0 | LhsOp 0 | RhsOp 0 | Temp
+   InnerCycle In data : Counter 5 | str (16 symbs)| pattern (5 symbs)
+]
