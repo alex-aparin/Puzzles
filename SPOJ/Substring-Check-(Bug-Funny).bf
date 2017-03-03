@@ -19,5 +19,19 @@
 <<<<         ; Jmp to OutCounter
 ; Program running
 [
-
+    -        ; Decrease OutCounter
+    >>>>>    ; Jmp to InnerCycle out data
+    ; Clear InnerCycle Out data
+    [-]+     ; Create constant 1
+    >        ; Jmp to DiffCounts
+    [-]      ; Mov DiffCounts 0
+    >        ; Jmp to LhsOp
+    [-]      ; Mov LhsOp 0
+    >        ; Jmp to RhsOp
+    [-]      ; Mov RhsOp 0
+    >        ; Jmp Temp
+    [-]      ; Mov Temp 0
+    >        ; Jmp to InnerCycle In data
+    ; Init InnerCycle In data
+    
 ]
