@@ -1,6 +1,6 @@
 [
    Current program checks whether pattern (5 length) is substring for
-   given string (16 length). Check is performed on given 24 statements
+   given string (10 length). Check is performed on given 24 statements
 
    Program memory organization:
    Header : OutCounter 24 | \n 10 | \r 13 | Answer 0 | RawAnswer 0
@@ -35,7 +35,7 @@
     ; Init InnerCycle In data
     +++++    ; Mov Counter 5
     >        ; Jmp to str
-    ; Read str (16 length)
+    ; Read str (10 length)
     ,------------------------------------------------>
     ,------------------------------------------------>
     ,------------------------------------------------>
@@ -46,20 +46,14 @@
     ,------------------------------------------------>
     ,------------------------------------------------>
     ,------------------------------------------------>
-    ,------------------------------------------------>
-    ,------------------------------------------------>
-    ,------------------------------------------------>
-    ,------------------------------------------------>
-    ,------------------------------------------------>
-    ,------------------------------------------------>
-    ,[-]             ; Read and clear delimiter
+    ,>             ; Read delimiter
     ; Read pattern (5 length)
     ,------------------------------------------------>
     ,------------------------------------------------>
     ,------------------------------------------------>
     ,------------------------------------------------>
     ,------------------------------------------------
-    <<<<<<<<<<<<<<<<<<<<< ; Jmp to Counter
+    <<<<<<<<<<<<<<<< ; Jmp to Counter
    ; Counting substring "including"
    [
        -             ; Decrease counter
@@ -73,25 +67,25 @@
        ]
        <                              ; Jmp to counter
        ; Mov pattern(0) to right operand and temp
-       >>>>>>>>>>>>>>>>               ; Jmp to pattern(0)
+       >>>>>>>>>>>>               ; Jmp to pattern(0)
        [
           -                           ; Decrease value
-          <<<<<<<<<<<<<<<<  <<<       ; Jmp to RightOp
+          <<<<<<<<<<<<                ; Jmp to RightOp
           +                           ; Increase RightOp
           >                           ; Jmp to Temp
           +                           ; Increase Temp
           <                           ; Jmp to RightOp
-          >>>>>>>>>>>>>>>>  >>>       ; Jmp to pattern(0)
+          >>>>>>>>>>>>                ; Jmp to pattern(0)
        ]
-       <<<<<<<<<<<<<<<<               ; Jmp to counter
+       <<<<<<<<<<<<                    ; Jmp to counter
        ; Mov temp to pattern(0)
        <                              ; Jmp to Temp
        [
             -                         ; Decrease value
             >                         ; Jmp to counter
-            >>>>>>>>>>>>>>>>          ; Jmp to pattern(0)
+            >>>>>>>>>>                ; Jmp to pattern(0)
             +                         ; Increase value
-            <<<<<<<<<<<<<<<<          ; Jmp to counter
+            <<<<<<<<<<                ; Jmp to counter
             <                         ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
@@ -102,9 +96,8 @@
        ; Shift string to left by one sym
        >                              ; Jmp to str
        >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       <<<<<<<<<<<<<<<<               ; Jmp to str
+       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
+       <<<<<<<<<                      ; Jmp to str
        <                              ; Jmp to Counter
    ]
 ]
