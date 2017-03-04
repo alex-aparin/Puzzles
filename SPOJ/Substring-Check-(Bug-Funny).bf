@@ -84,12 +84,12 @@
        >>>>>>>>>>>>               ; Jmp to pattern(0)
        [
           -                           ; Decrease value
-          <<<<<<<<<<<<                ; Jmp to RightOp
+          <<<<<<<<<<<<<<                ; Jmp to RightOp
           +                           ; Increase RightOp
           >                           ; Jmp to Temp
           +                           ; Increase Temp
           <                           ; Jmp to RightOp
-          >>>>>>>>>>>>                ; Jmp to pattern(0)
+          >>>>>>>>>>>>>>                ; Jmp to pattern(0)
        ]
        <<<<<<<<<<<<                   ; Jmp to counter
        ; Mov temp to pattern(0)
@@ -97,9 +97,9 @@
        [
             -                         ; Decrease value
             >                         ; Jmp to counter
-            >>>>>>>>>>                ; Jmp to pattern(0)
+            >>>>>>>>>>>>                ; Jmp to pattern(0)
             +                         ; Increase value
-            <<<<<<<<<<                ; Jmp to counter
+            <<<<<<<<<<<<                ; Jmp to counter
             <                         ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
