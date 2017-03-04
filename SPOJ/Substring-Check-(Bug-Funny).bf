@@ -33,7 +33,7 @@
     [-]      ; Mov Temp 0
     >        ; Jmp to Counter
     ; Init InnerCycle In data
-    +++++    ; Mov Counter 5
+    ++++++    ; Mov Counter 6
     >        ; Jmp to str
     ; Read str (10 length)
     ,------------------------------------------------>
