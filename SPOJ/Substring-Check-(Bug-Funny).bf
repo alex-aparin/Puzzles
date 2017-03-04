@@ -107,12 +107,6 @@
        ;    Perform eq test and add res to HitCounter
        [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
        >>>                            ; Jmp to Counter
-       ; Shift string to left by one sym
-       >                              ; Jmp to str
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       <<<<<<<<<                      ; Jmp to str
-       <                              ; Jmp to Counter
 ;====================================================================
 ;      COMPARISON OF (1) LETTER
        ; Mov str(1) to left operand
@@ -163,12 +157,6 @@
        ;    Perform eq test and add res to HitCounter
        [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
        >>>                            ; Jmp to Counter
-       ; Shift string to left by one sym
-       >                              ; Jmp to str
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       <<<<<<<<<                      ; Jmp to str
-       <                              ; Jmp to Counter
 ;====================================================================
 ;      COMPARISON OF (2) LETTER
        ; Mov str(2) to left operand
@@ -219,12 +207,6 @@
        ;    Perform eq test and add res to HitCounter
        [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
        >>>                            ; Jmp to Counter
-       ; Shift string to left by one sym
-       >                              ; Jmp to str
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       <<<<<<<<<                      ; Jmp to str
-       <                              ; Jmp to Counter
 ;====================================================================
 ;      COMPARISON OF (3) LETTER
        ; Mov str(3) to left operand
@@ -275,12 +257,6 @@
        ;    Perform eq test and add res to HitCounter
        [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
        >>>                            ; Jmp to Counter
-       ; Shift string to left by one sym
-       >                              ; Jmp to str
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       >[-<+>]>[-<+>]>[-<+>]>[-<+>]
-       <<<<<<<<<                      ; Jmp to str
-       <                              ; Jmp to Counter
 ;====================================================================
 ;      COMPARISON OF (4) LETTER
        ; Mov str(4) to left operand
@@ -331,12 +307,12 @@
        ;    Perform eq test and add res to HitCounter
        [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
        >>>                            ; Jmp to Counter
+;====================================================================
        ; Shift string to left by one sym
        >                              ; Jmp to str
        >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
        >[-<+>]>[-<+>]>[-<+>]>[-<+>]
        <<<<<<<<<                      ; Jmp to str
        <                              ; Jmp to Counter
-;====================================================================
    ]
 ]
