@@ -321,4 +321,19 @@
        +                              ; Set constant 1
        >>>>>                          ; Jmp to Counter
    ]
+   ; Convert RawAnswer to Answer
+   <<<<<<                             ; Jmp to RawAnswer
+   [
+       -                              ; Decrease RawAnswer
+       <                              ; Jmp to Answer
+       +                              ; Increase Answer
+       >                              ; Jmp to RawAnswer
+       [-]                            ; Clear RawAnswer
+   ]
+   <                                  ; Jmp to Answer
+   ++++++++++++++++++++
+   ++++++++++++++++++++
+   ++++++++                           ; Convert Answer to Ascii Num
+   .                                  ; Print Answer
+   <<<                                ; Jmp to OutCounter
 ]
