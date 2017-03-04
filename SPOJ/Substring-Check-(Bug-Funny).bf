@@ -9,7 +9,7 @@
 ]
 
 ; Header initialization
-+            ; OutCounter
+++++++++++++++++++++++++            ; OutCounter 24
 >            ; Jmp to \n
 ++++++++++    ; Code of new line
 >            ; Jmp to \r
