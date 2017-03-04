@@ -241,15 +241,15 @@
           <                           ; Jmp to RightOp
           >>>>>>>>>>>>>>>>>                ; Jmp to pattern(3)
        ]
-       <<<<<<<<<<<<<<<<                   ; Jmp to counter
+       <<<<<<<<<<<<<<<                   ; Jmp to counter
        ; Mov temp to pattern(3)
        <                              ; Jmp to Temp
        [
             -                         ; Decrease value
             >                         ; Jmp to counter
-            >>>>>>>>>>>>>>>>                ; Jmp to pattern(3)
+            >>>>>>>>>>>>>>>                ; Jmp to pattern(3)
             +                         ; Increase value
-            <<<<<<<<<<<<<<<<                ; Jmp to counter
+            <<<<<<<<<<<<<<<                ; Jmp to counter
             <                         ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
