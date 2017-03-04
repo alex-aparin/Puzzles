@@ -14,13 +14,13 @@
 ++++++++++    ; Code of new line
 >            ; Jmp to \r
 +++++++++++++ ; Code of carret return
->            ; Jmp to Answer
->            ; Jmp to RawAnswer
-<<<<         ; Jmp to OutCounter
+<<         ; Jmp to OutCounter
 ; Program running
 [
     -        ; Decrease OutCounter
-    >>>>>    ; Jmp to InnerCycle out data
+    >>>[-]            ; Jmp to Answer and clear it
+    >[-]            ; Jmp to RawAnswer and clear it
+    >    ; Jmp to InnerCycle out data
     ; Clear InnerCycle Out data
     [-]+     ; Create constant 1
     >        ; Jmp to DiffCounts
