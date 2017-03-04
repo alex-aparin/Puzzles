@@ -310,6 +310,7 @@
 ;====================================================================
        ; Shift string to left by one sym
        >                              ; Jmp to str
+       [-]                            ; Clear First Letter
        >[-<+>]>[-<+>]>[-<+>]>[-<+>]>[-<+>]
        >[-<+>]>[-<+>]>[-<+>]>[-<+>]
        <<<<<<<<<                      ; Jmp to str
@@ -335,5 +336,7 @@
    ++++++++++++++++++++
    ++++++++                           ; Convert Answer to Ascii Num
    .                                  ; Print Answer
-   <<<                                ; Jmp to OutCounter
+   <.                                 ; Jmp to \r and print it
+   <.                                 ; Jmp to \n and print it
+   <                                ; Jmp to OutCounter
 ]
