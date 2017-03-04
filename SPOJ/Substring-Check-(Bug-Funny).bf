@@ -314,5 +314,11 @@
        >[-<+>]>[-<+>]>[-<+>]>[-<+>]
        <<<<<<<<<                      ; Jmp to str
        <                              ; Jmp to Counter
+       ; Mov RawAnswer ~HitCounter
+       <<<<<                          ; Jmp to constant
+       ;    Perform eq test and add res to RawAnswer
+       [-<+>>[-<<->>]<][-<+>]>[-<<+>>]<
+       +                              ; Set constant 1
+       >>>>>                          ; Jmp to Counter
    ]
 ]
