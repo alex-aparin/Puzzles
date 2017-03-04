@@ -220,7 +220,7 @@
           <<         ; Jmp to LeftOp
           >>>>>>>       ; Jmp to str
        ]
-       <                              ; Jmp to counter
+       <<<<                              ; Jmp to counter
        ; Mov temp to str(3)
        <                              ; Jmp to Temp
        [
@@ -234,22 +234,22 @@
        >>>>>>>>>>>>>>>               ; Jmp to pattern(3)
        [
           -                           ; Decrease value
-          <<<<<<<<<<<<<<<                ; Jmp to RightOp
+          <<<<<<<<<<<<<<<<<                ; Jmp to RightOp
           +                           ; Increase RightOp
           >                           ; Jmp to Temp
           +                           ; Increase Temp
           <                           ; Jmp to RightOp
-          >>>>>>>>>>>>>>>                ; Jmp to pattern(3)
+          >>>>>>>>>>>>>>>>>                ; Jmp to pattern(3)
        ]
-       <<<<<<<<<<<<<<<                   ; Jmp to counter
+       <<<<<<<<<<<<<<<<                   ; Jmp to counter
        ; Mov temp to pattern(3)
        <                              ; Jmp to Temp
        [
             -                         ; Decrease value
             >                         ; Jmp to counter
-            >>>>>>>>>>>>>                ; Jmp to pattern(3)
+            >>>>>>>>>>>>>>>>                ; Jmp to pattern(3)
             +                         ; Increase value
-            <<<<<<<<<<<<<                ; Jmp to counter
+            <<<<<<<<<<<<<<<<                ; Jmp to counter
             <                         ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
@@ -270,7 +270,7 @@
           <<         ; Jmp to LeftOp
           >>>>>>>>       ; Jmp to str
        ]
-       <                              ; Jmp to counter
+       <<<<<                              ; Jmp to counter
        ; Mov temp to str(4)
        <                              ; Jmp to Temp
        [
@@ -284,12 +284,12 @@
        >>>>>>>>>>>>>>>>               ; Jmp to pattern(4)
        [
           -                           ; Decrease value
-          <<<<<<<<<<<<<<<<                ; Jmp to RightOp
+          <<<<<<<<<<<<<<<<<<                ; Jmp to RightOp
           +                           ; Increase RightOp
           >                           ; Jmp to Temp
           +                           ; Increase Temp
           <                           ; Jmp to RightOp
-          >>>>>>>>>>>>>>>>                ; Jmp to pattern(4)
+          >>>>>>>>>>>>>>>>>>                ; Jmp to pattern(4)
        ]
        <<<<<<<<<<<<<<<<                   ; Jmp to counter
        ; Mov temp to pattern(4)
@@ -297,9 +297,9 @@
        [
             -                         ; Decrease value
             >                         ; Jmp to counter
-            >>>>>>>>>>>>>>                ; Jmp to pattern(4)
+            >>>>>>>>>>>>>>>>                ; Jmp to pattern(4)
             +                         ; Increase value
-            <<<<<<<<<<<<<<                ; Jmp to counter
+            <<<<<<<<<<<<<<<<                ; Jmp to counter
             <                         ; Jmp to Temp
        ]
        >                              ; Jmp to Counter
