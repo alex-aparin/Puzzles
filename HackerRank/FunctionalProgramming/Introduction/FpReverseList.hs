@@ -1,0 +1,1 @@
+﻿rev l = foldl (\arr a -> a : arr) [] l
