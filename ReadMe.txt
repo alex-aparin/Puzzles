@@ -6,9 +6,11 @@ This is my attempt to store my solutions of puzzles found in the internet. Basic
 
 3) Project Euler (for more information see https://projecteuler.net)
 
-4) Timus (for more information see http://acm.timus.ru)
+4) Timus (for more information see http://acm.timus.ru) (not yet)
 
 4) Sphere Online Judge (for more information see http://www.spoj.com)
+
+5) HackerRank (for more information see http://www.hackerrank.com)
 
 Important note: this project can store old information about puzzles and its solutions (puzzles can be added/removed/changed). More over, keep in mind that this project contains my early solutions. There was (and is) time when I wrote (and write) really crazy and stupid code! :))) 
 
