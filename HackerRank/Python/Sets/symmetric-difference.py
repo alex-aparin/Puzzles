@@ -1,0 +1,6 @@
+input()
+a = set([int(x) for x in input().split()])
+input()
+b = set([int(x) for x in input().split()])
+ans = sorted(list(a ^ b))
+print('\n'.join(map(str, ans)))
